@@ -1,0 +1,48 @@
+type Query {
+    getAllPlayers: [Player]
+    getExtract: Extract
+}
+
+type Mutation {
+    addDolarValue(submmitedDolarValue: SubmmitedDolarValue): [DolarValue]
+    doTransaction(newTransaction: TransactionRequest): TransactionResponse
+}
+
+type Subscription {
+    dolarValues: DolarValue
+    stocks: DolarValue
+}
+
+type Extract {
+    itens: [ExtractItem]
+}
+
+type ExtractItem {
+    code: Int
+    description: String   
+    value: Float
+}
+
+input TransactionRequest {
+    transactionCode: Int
+    transactionValue: Float
+}
+
+type TransactionResponse {
+    id: String
+}
+
+type Player {
+    id: ID
+    name: String
+}
+
+type DolarValue {
+    id: String
+    value: Int
+}
+
+input SubmmitedDolarValue {
+    id: String
+    value: Int
+}

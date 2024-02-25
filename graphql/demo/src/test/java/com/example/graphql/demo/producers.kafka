@@ -1,0 +1,4 @@
+PRODUCER keyed-message
+topic: log-transacao-emitido
+key: mykeyq
+{"particionNumber":4, "transactionValue":45} 
